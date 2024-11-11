@@ -1,16 +1,17 @@
 ﻿using FizzBuzz;
 
 Console.WriteLine("Type a number and you'll see what it returns.");
-int UserInputNumber = 0;
+
+int userInputNumber = 0;
 try
 {
-    UserInputNumber = Convert.ToInt32(Console.ReadLine());
+    userInputNumber = Convert.ToInt32(Console.ReadLine());
 }
 catch
 {
-    Console.WriteLine("Input must be a number´.");
+    throw new Exception($"{userInputNumber} is not a number.");
 }
 
 FizzBuzzLogic fizzBuzzLogic = new FizzBuzzLogic();
-fizzBuzzLogic.ReturnsFizzBuzzInDiffrentWays(UserInputNumber);
+fizzBuzzLogic.CombinesTheResult(userInputNumber);
 Console.ReadLine();
